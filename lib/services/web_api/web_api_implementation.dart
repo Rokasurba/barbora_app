@@ -17,7 +17,8 @@ class WebApiImpl implements WebApi {
       };
 
       Map<String, String> headers = {
-        'x-rapidapi-key': 'cdfecb6d8amsh04a5d77cf321bd6p135333jsnad871d47eeb8',
+        // never upload private keys to github :)
+        'x-rapidapi-key': '8c6948b18bmsh6b8acaac972f972p1395e3jsn1dd8490ca241',
         'x-rapidapi-host': 'asos2.p.rapidapi.com',
       };
 
@@ -25,7 +26,7 @@ class WebApiImpl implements WebApi {
           Uri.https(Constants.API_URL, Constants.API_PRODUCT_LIST, queryParams);
 
       final r = await http.get(url, headers: headers);
-
+      print(r.body);
       if (r.statusCode != 200) {
         throw "Error when fecthing data";
       }

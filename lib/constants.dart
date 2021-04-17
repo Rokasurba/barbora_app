@@ -11,7 +11,7 @@ class Constants {
   static const String API_URL = "asos2.p.rapidapi.com";
   static const String API_PRODUCT_LIST = "/products/v2/list";
 
-  static const int stockPaginationLimit = 2;
+  static const int stockPaginationLimit = 10;
 
   static const String StockStorageKey = "stocks";
 
@@ -33,9 +33,9 @@ class Constants {
       primaryColor: lightPrimary,
       accentColor: darkAccent,
       scaffoldBackgroundColor: lightBackground,
-      textTheme: GoogleFonts.ralewayTextTheme(Theme.of(context).textTheme),
+      textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme),
       appBarTheme: AppBarTheme(
-        textTheme: GoogleFonts.ralewayTextTheme(Theme.of(context).textTheme),
+        textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme),
       ),
     );
   }

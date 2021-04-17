@@ -1,10 +1,10 @@
 import 'package:barbora_app/views/lazy_stock_list_view.dart';
 import 'package:barbora_app/views/main_menu_view.dart';
+import 'package:barbora_app/views/stock_detail_view.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
 import 'models/stock.dart';
-import 'views/stock_detail_view.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {

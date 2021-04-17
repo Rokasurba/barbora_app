@@ -15,7 +15,6 @@ class CachedStockListView extends StatefulWidget {
 
 class _CachedStockListViewState extends State<CachedStockListView>
     with AutomaticKeepAliveClientMixin<CachedStockListView> {
-
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -34,21 +33,19 @@ class _CachedStockListViewState extends State<CachedStockListView>
             child: Consumer(
               builder: (context, watch, child) {
                 watch(cachedStockDataProvider);
-               
+
                 return LazyLoadScrollView(
                   onEndOfPage: () => _prov.fetchData(),
                   child: GridView.builder(
                     shrinkWrap: true,
-                    itemCount: _prov.loading
-                        ? _prov.stockList.length + 1
-                        : _prov.stockList.length,
+                    itemCount: _prov.stockList.length,
                     itemBuilder: (context, index) {
                       return MenuTileCard(
                         stock: _prov.stockList[index],
                       );
                     },
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
+                      crossAxisCount: 3,
                       childAspectRatio: 1,
                     ),
                   ),

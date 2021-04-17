@@ -15,20 +15,20 @@ class MenuTileCard extends StatelessWidget {
     return GestureDetector(
       onTap: () =>
           Navigator.pushNamed(context, AppRoutes.stockDetail, arguments: stock),
-      child: Card(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20.0))),
-        elevation: 10.0,
-        child: ClipRRect(
-          borderRadius: BorderRadius.all(
-            Radius.circular(20.0),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.grey,
+            width: 0.5,
           ),
-          child: Stack(
-            children: <Widget>[
-              Image.network(
+        ),
+        child: Column(
+          children: <Widget>[
+            Container(
+              width: 200,
+              height: 100,
+              child: Image.network(
                 stock.imageUrl,
-                height: 170,
-                width: 200,
                 fit: BoxFit.fitWidth,
                 alignment: FractionalOffset.bottomCenter,
                 errorBuilder: (BuildContext context, Object exception,
@@ -38,18 +38,32 @@ class MenuTileCard extends StatelessWidget {
                   );
                 },
               ),
-              Container(
-                margin: EdgeInsets.only(top: 170),
+            ),
+            Expanded(
+              child: Container(
+                child: Center(
+                  child: Text(
+                    stock.name,
+                    overflow: TextOverflow.clip,
+                    style: TextStyle(fontSize: 12.0),
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
                 child: Center(
                   child: Text(
                     stock.price,
-                    style:
-                        TextStyle(fontSize: 22.0, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red),
                   ),
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );

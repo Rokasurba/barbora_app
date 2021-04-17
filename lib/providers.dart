@@ -30,7 +30,7 @@ class StockDataProvider extends ChangeNotifier {
 
   Future<void> fetchData() async {
     _loading = true;
-
+    
     await loadData();
 
     _loading = false;
@@ -82,7 +82,7 @@ class CachedStockDataProvider extends ChangeNotifier {
   Future<void> loadData() async {
     var localStockList =
         _localStorageService.getData(Constants.StockStorageKey, _offset);
-
+    print(_offset);
     if (localStockList.isNotEmpty) {
       _stockList = localStockList;
       _offset += Constants.stockPaginationLimit;
