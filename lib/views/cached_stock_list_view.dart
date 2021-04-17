@@ -57,7 +57,6 @@ class _CachedStockListViewState extends State<CachedStockListView>
             ),
           );
         }
-        // TODO add gesture detector and refresh
         return Container(
           child: Center(
             child: Text('Error while fetching data. Tap to try again!'),

@@ -90,6 +90,7 @@ class StockDetailView extends StatelessWidget {
                   ),
                   Text(
                     "Description",
+                    // ignore: deprecated_member_use
                     style: Theme.of(context).textTheme.title,
                   ),
                   Text(
